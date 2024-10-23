@@ -5,6 +5,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Iterator;
 
 import com.unu.proyectoWebGB.beans.Autor;
@@ -26,7 +27,7 @@ public class AutoresController extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
     
-    protected void proccessRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void proccessRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
     	if(request.getParameter("op")==null) {
     		listar(request, response); ;
     		return;
@@ -47,7 +48,7 @@ public class AutoresController extends HttpServlet {
     			
     }
     
-    private void listar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void listar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
     	 /*request.setAttribute("listaAutores", modelo.listarAutores());   
     	 request.getRequestDispatcher("/autores/listaAutores.jsp").forward(request, response);*/
     	 
@@ -72,7 +73,12 @@ public class AutoresController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		proccessRequest(request, response);
+		try {
+			proccessRequest(request, response);
+		} catch (ServletException | IOException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -81,7 +87,12 @@ public class AutoresController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
-		proccessRequest(request, response);
+		try {
+			proccessRequest(request, response);
+		} catch (ServletException | IOException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

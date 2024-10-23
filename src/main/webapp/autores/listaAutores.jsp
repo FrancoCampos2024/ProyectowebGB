@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <title>titulo</title>
 
-<table id="tabla">
+<table id="tabla" , border=1>
 	 <thead>
 		 <tr>
 			<th>Codigo del autor</th>
