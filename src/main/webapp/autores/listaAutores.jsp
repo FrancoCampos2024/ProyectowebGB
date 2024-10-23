@@ -9,14 +9,22 @@
 <head>
 <meta charset="UTF-8">
 <title>titulo</title>
+</head>
+<body>
 
-<table id="tabla" , border=1>
+<%
+String url= "http://localhost:/ProyectowebCampos/";
+%>
+<a type="button" href="<%=url%>AutoresController?op=nuevo">Nuevo Autor</a>
+
+
+<table>
 	 <thead>
 		 <tr>
 			<th>Codigo del autor</th>
 			<th>Nacionalidad</th>
 			<th>Nombre del autor</th>
-			<th>Operaciones</th>
+			<th>Operaciones</th>                                              
 		 </tr>
 	 </thead>
 	 <tbody> 
@@ -53,11 +61,5 @@
 		
  	</tbody>
  </table>
-
-</head>
-<body>
-
-
-bienvenido 
 </body>
 </html>

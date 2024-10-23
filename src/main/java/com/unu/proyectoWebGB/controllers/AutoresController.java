@@ -39,8 +39,8 @@ public class AutoresController extends HttpServlet {
 			listar(request, response);
 			break;
 		}
-		case "nuevo":{
-			//nuevo();
+		case "nuevo":{ 			
+			request.getRequestDispatcher("/autores/nuevoAutor.jsp").forward(request, response);
 			break;
 		}
     	}
@@ -80,7 +80,7 @@ public class AutoresController extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-
+ 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

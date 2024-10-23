@@ -33,8 +33,7 @@ public class AutoresModel {
 	public List<Autor> listarAutores() throws SQLException {
 		try {
 			List<Autor> lista = new ArrayList<>();
-			String sql = "CALL sp_listar_autor"
-					+ "()";
+			String sql = "CALL sp_listar_autor()";
 			conexion =  Conexion.abrirConexion();
 			
 			cs = conexion.prepareCall(sql);
