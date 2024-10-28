@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class Conexion {
 
-	private static String url = "jdbc:mysql://localhost:3306/bibliotecapoo2ga"; // URL de la base de datos
+	private static String url = "jdbc:mysql://localhost:3306/bibliotecapoo2"; // URL de la base de datos
 	private static String usuario = "root"; // Usuario de la base de datos
 	private static String contrasena = "123456"; // Contraseña de la base de datos
 	protected static Connection conexion;
