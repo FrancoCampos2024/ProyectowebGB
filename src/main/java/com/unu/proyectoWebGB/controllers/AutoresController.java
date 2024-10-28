@@ -45,6 +45,7 @@ public class AutoresController extends HttpServlet {
 		}
 		case "nuevo": {
 			request.getRequestDispatcher("/autores/nuevoAutor.jsp").forward(request, response);
+			System.out.println("Entro a nuevo.");
 			break;
 		}
 		case "insertar": {
