@@ -19,7 +19,7 @@
 		Autor</a>
 
 
-	<table>
+	<table border=1>
 		<thead>
 			<tr>
 				<th>Codigo del autor</th>

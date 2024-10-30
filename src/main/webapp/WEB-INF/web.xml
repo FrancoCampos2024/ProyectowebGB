@@ -19,4 +19,34 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>EditorialController</display-name>
+    <servlet-name>EditorialController</servlet-name>
+    <servlet-class>com.unu.proyectoWebGB.controllers.EditorialController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditorialController</servlet-name>
+    <url-pattern>/EditorialController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LibroController</display-name>
+    <servlet-name>LibroController</servlet-name>
+    <servlet-class>com.unu.proyectoWebGB.controllers.LibroController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LibroController</servlet-name>
+    <url-pattern>/LibroController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GeneroController</display-name>
+    <servlet-name>GeneroController</servlet-name>
+    <servlet-class>com.unu.proyectoWebGB.controllers.GeneroController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GeneroController</servlet-name>
+    <url-pattern>/GeneroController</url-pattern>
+  </servlet-mapping>
 </web-app>

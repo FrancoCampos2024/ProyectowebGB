@@ -32,8 +32,7 @@ public class AutoresController extends HttpServlet {
 	protected void proccessRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, SQLException {
 		if (request.getParameter("op") == null) {
-			listar(request, response);
-			;
+			listar(request, response);		
 			return;
 		}
 

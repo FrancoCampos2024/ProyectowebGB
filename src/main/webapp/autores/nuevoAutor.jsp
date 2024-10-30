@@ -14,7 +14,7 @@
 	<form action="<%=url%>AutoresController" method="Post">
 	<input type="hidden" name = "op" value= "insertar">
 	Nombre del autor: <input type="text" name ="nombre" id = "nombre"><br>
-	Nacionalidad del autor: <input toype="text" name ="nacionalidad" id="na+cionalidad"><br>
+	Nacionalidad del autor: <input type="text" name ="nacionalidad" id="nacionalidad"><br>
 	<input type ="submit" value="Guardar" name="Guardar">
 	<a href= "<%=url%>AutoresController?op=listar">Volver</a>
 	</form>
