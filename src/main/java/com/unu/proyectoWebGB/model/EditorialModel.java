@@ -117,6 +117,25 @@ public class EditorialModel extends Conexion {
 	}
 	
 	
+	public void eliminar(int idEditorial) {
+		try {
+			
+			String sql="CALL sp_eliminarEditorial(?)";
+			this.abrirConexion();
+			cs=conexion.prepareCall(sql);
+			cs.setInt(1,idEditorial);
+			rs=cs.executeQuery();
+			
+			this.cerrarConexion();
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("No realizo la eliminacion desde el model: "+e.getMessage());
+			this.cerrarConexion();
+		}
+		
+	}
+	
+	
 	
 
 }

@@ -66,6 +66,10 @@ public class EditorialController extends HttpServlet {
 			obtener(request, response);
 			break;
 		}
+		case "eliminar":{
+			eliminar(request, response);
+			break;
+		}
 		}
 
 	}
@@ -137,6 +141,25 @@ public class EditorialController extends HttpServlet {
 		}
 
 	}
+	
+	private void eliminar(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException, SQLException {
+
+		try {
+						
+			int ideditorial=Integer.parseInt(request.getParameter("id"));
+			
+			modelo.eliminar(ideditorial);
+			request.getRequestDispatcher("/EditorialController?op=listar").forward(request, response);
+									
+		} catch (Exception e) {
+			System.out.println("No se realizo la operacion eliminar."+e.getMessage());
+		}
+
+	}
+	
+	
+	
 	
 	private void obtener(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, SQLException {

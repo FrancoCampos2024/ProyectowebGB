@@ -50,6 +50,22 @@ public class GeneroController extends HttpServlet {
 			insertar(request, response);
 			break;
 		}
+		case "obtener":{
+			System.out.println("entro aca.");
+			obtener(request, response);
+			break;
+		}
+		case "modificar":{
+			modificar(request, response);
+			break;
+		}
+		
+		case "eliminar":{
+			eliminar(request, response);
+			break;
+		}
+		
+		
 		}
 	}
 
@@ -97,6 +113,71 @@ public class GeneroController extends HttpServlet {
 		}
 
 	}
+	
+	private void obtener(HttpServletRequest request, HttpServletResponse response) {
+		
+		try {
+			
+			String codigo= request.getParameter("id");
+			Genero genero= modelo.obtener(Integer.parseInt(codigo));
+						
+			if(genero!=null) {
+				request.setAttribute("genero", genero);
+				request.getRequestDispatcher("/generos/editarGenero.jsp").forward(request, response);
+			}else {
+				System.out.println("No guardo genero en obtener de contralor");
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Error en obtener desde el controlador: "+e.getMessage());
+			
+		}
+	}
+	
+private void modificar(HttpServletRequest request, HttpServletResponse response) {
+		
+	try {
+		Genero genero= new Genero();
+		
+		genero.setIdgenero(Integer.parseInt(request.getParameter("codigo")));
+		genero.setNombre(request.getParameter("nombre"));
+		genero.setDescripcion(request.getParameter("descripcion"));
+		
+		if(modelo.modificador(genero)>0) {
+			request.getSession().setAttribute("Exito", "Se modifico el genero.");
+			response.sendRedirect(request.getContextPath()+"/GeneroController?op=listar");
+		}else {
+			request.getSession().setAttribute("Fracaso", "No se modifico el genero.");
+			response.sendRedirect(request.getContextPath()+"/GeneroController?op=listar");			
+		}
+
+	} catch (Exception e) {
+		// TODO: handle exception
+		System.out.println("Error modificar genero controlador: "+e.getMessage());
+	}
+	}
+
+private void eliminar(HttpServletRequest request, HttpServletResponse response) {
+	
+	try {
+		
+		String codigo=request.getParameter("id");
+		
+		modelo.eliminar(Integer.parseInt(codigo));
+		
+		response.sendRedirect(request.getContextPath()+"/GeneroController?op=listar");
+		
+
+	} catch (Exception e) {
+		// TODO: handle exception
+		System.out.println("Error eliminar genero controlador: "+e.getMessage());
+	}
+	}
+
+
+
+
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
